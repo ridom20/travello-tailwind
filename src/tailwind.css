@@ -1,0 +1,123 @@
+/* 1. Theme default css */
+/* @import "assets/css/custom/slick-slide.css"; */
+/* @import "assets/css/custom/select2.css"; */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Kaushan+Script&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply font-dm overflow-x-hidden flex flex-col min-h-screen text-primary-paragraph text-base bg-body dark:bg-dark-body;
+    }
+    p {
+        @apply m-0 text-primary-paragraph font-dm font-normal dark:text-dark-primary-paragraph;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    label {
+        @apply font-dm text-primary-title font-bold dark:text-dark-primary-title;
+    }
+}
+@layer components {
+    .change-theme-mode {
+        @apply cursor-pointer text-2xl text-primary-title dark:text-dark-primary-title;
+    }
+    .transition-bundle {
+        @apply transition-all duration-300 ease-linear;
+    }
+    .rounded-primary {
+        @apply bg-primary rounded-full border border-transparent text-white flex items-center justify-center;
+    }
+    .btn-secondary {
+        @apply bg-secondary rounded-[30px] border border-transparent text-white text-base font-medium leading-[1.3] inline-block py-8 px-20 transition-bundle hover:bg-transparent hover:border-secondary hover:text-secondary;
+    }
+    .main-menu .single-list{
+        @apply inline-block relative z-[9] mr-12 cursor-pointer;
+    }
+    .main-menu .single{
+        @apply transition-bundle text-base font-medium leading-[1.3] text-primary-title dark:text-dark-primary-title block py-32 px-20 capitalize mt-5 pt-27 xs-to-lg-max:px-12;
+    }
+    .main-menu .single.nav-link.active, .main-menu .sub-single.active{
+        @apply relative text-primary;
+    }
+    .main-menu .single.nav-link.active::before{
+        @apply content-[""] w-full h-2 absolute left-0 bottom-38 z-0 bg-primary transition-bundle;
+    }
+    .main-menu .sub-single {
+        @apply block text-primary-paragraph font-semibold text-md py-6 px-18 capitalize;
+    }
+    .main-menu .single-list:hover .sub-single {
+        @apply hover:text-primary hover:tracking-widest;
+    }
+    .main-menu .main-submenu {
+        @apply absolute w-260 bg-white py-21 left-0 right-0 top-[105%] opacity-0 invisible border-t-[3px] border-t-primary;
+    }
+    .header-area-three .main-menu .listing .single-list:hover > .main-submenu {
+        @apply visible opacity-100 top-[100%] transition-opacity duration-300 ease-in-out;
+    }
+    .header-area-three .main-menu .listing .single-list:hover > .main-submenu {
+        @apply left-full top-0;
+    }
+    .header-area-three .main-menu .listing .main-submenu > .single-list {
+        @apply m-0 block;
+    }
+    /* .sticky-bar {
+        @apply left-0 m-auto fixed top-0 w-full shadow-header z-10 animate-fade-in-down;
+    } */
+    .header-area-two .main-menu .single {
+        @apply text-white hover:text-primary;
+    }
+    .header-area.header-area-two .header-sticky.sticky-bar {
+        @apply z-10 bg-black/80 backdrop-blur-lg;
+    }
+    .overlay {
+      @apply fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 hidden z-[9];
+  }
+  /* slick nav */
+  .mobile_menu {
+      @apply right-0 w-full z-100;
+  }
+  .mobile_menu .slicknav_menu {
+      @apply bg-transparent mt-0;
+  }
+  .mobile_menu .slicknav_menu .slicknav_btn {
+      @apply -top-53;
+  }
+  .mobile_menu .slicknav_menu .slicknav_btn .slicknav_icon-bar {
+      @apply !bg-primary h-2 my-7 mx-0;
+  }
+  .mobile_menu .slicknav_menu .slicknav_nav {
+      @apply mt-0 left-0 right-0 absolute z-100 p-19;
+  }
+  .mobile_menu .slicknav_menu .slicknav_btn .slicknav_icon-bar .slicknav_nav ul {
+      @apply mt-0 mr-0 mb-0 ml-11;
+  }
+  .mobile_menu .slicknav_menu .slicknav_btn .slicknav_icon-bar .slicknav_nav ul .single {
+      @apply text-primary-title font-semibold block text-base xs:text-md capitalize;
+  }
+  .header-area .mobile_menu .slicknav_menu .slicknav_nav .single.nav-link.active {
+      @apply text-primary;
+  }
+  .header-area .mobile_menu .slicknav_menu .slicknav_nav .single {
+      @apply text-primary-title block font-semibold text-base xs:text-md capitalize;
+  }
+  .header-area .mobile_menu .slicknav_menu .slicknav_nav .slicknav_arrow {
+      @apply text-primary -top-30;
+  }
+  .header-area .mobile_menu .slicknav_menu .slicknav_nav .sub-single{
+      @apply xs:!text-md;
+  }
+  .header-area .mobile_menu .slicknav_menu .slicknav_nav .slicknav_item a i{
+      @apply hidden;
+  }
+  /* end */
+  
+  .header-area .mobile_menu .slicknav_menu .slicknav_nav .sub-single {
+      @apply text-primary-title font-semibold text-base capitalize;
+  }
+}
